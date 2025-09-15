@@ -23,9 +23,9 @@ public class FileHandlingActivity {
         }
         // c. Write messages to files
         String message = new String("HELP HELP HELP");
-        Files.write(Paths.get("JavaFileSystem/notes.txt"), message.getBytes());
+        Files.write(filePath1, message.getBytes());
         // d. Read and display file contents
-        
+        System.out.println(File.readString(filePath3));
         // e. Create backup directory
         
         // f. Copy contents to backup file
