@@ -10,7 +10,6 @@ public class FileHandlingActivity {
         Path filePath1 = Paths.get("JavaFileSystem/notes.txt"); 
         Path filePath2 = Paths.get("JavaFileSystem/data.txt"); 
         Path filePath3 = Paths.get("JavaFileSystem/logs.txt"); 
-   
         //notes.createNewFile();
         try {
             // Create the new file
@@ -25,11 +24,13 @@ public class FileHandlingActivity {
         String message = new String("HELP HELP HELP");
         Files.write(filePath1, message.getBytes());
         // d. Read and display file contents
-        System.out.println(File.readString(filePath3));
+        System.out.println(Files.readString(filePath3));
         // e. Create backup directory
         Files.createDirectory(Paths.get("Backup"));
         // f. Copy contents to backup file
-        
+        Path filePath4 = Paths.get("Backup/backup.txt");
+        Files.createFile(filePath4);
+        Files.write(filePath4, (Files.readString(filePath1) + Files.readString(filePath2) + Files.readString(filePath3)).getBytes());
         // g. List all files in both directories
     }
 }
