@@ -22,7 +22,8 @@ public class FileHandlingActivity {
             System.err.println("Error creating file: " + e.getMessage());
         }
         // c. Write messages to files
-        
+        String message = new String("HELP HELP HELP");
+        Files.write(Paths.get("JavaFileSystem/notes.txt"), message.getBytes());
         // d. Read and display file contents
         
         // e. Create backup directory
