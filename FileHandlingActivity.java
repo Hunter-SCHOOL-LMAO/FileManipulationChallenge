@@ -27,7 +27,7 @@ public class FileHandlingActivity {
         // d. Read and display file contents
         System.out.println(File.readString(filePath3));
         // e. Create backup directory
-        
+        Files.createDirectory(Paths.get("Backup"));
         // f. Copy contents to backup file
         
         // g. List all files in both directories
