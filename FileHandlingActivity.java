@@ -26,11 +26,14 @@ public class FileHandlingActivity {
         // d. Read and display file contents
         System.out.println(Files.readString(filePath3));
         // e. Create backup directory
-        Files.createDirectory(Paths.get("Backup"));
+        File backupDir = new File("Backup");
+        backupDir.mkdir();
         // f. Copy contents to backup file
         Path filePath4 = Paths.get("Backup/backup.txt");
         Files.createFile(filePath4);
         Files.write(filePath4, (Files.readString(filePath1) + Files.readString(filePath2) + Files.readString(filePath3)).getBytes());
         // g. List all files in both directories
+
+        System.out.println(dir.list().toString() + backupDir.list().toString());
     }
 }
